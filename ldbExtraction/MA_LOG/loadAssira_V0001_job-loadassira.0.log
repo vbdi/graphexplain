@@ -1,0 +1,45 @@
+ * Restarting DNS forwarder and DHCP server dnsmasq
+   ...done.
+[Modelarts Service Log]user: uid=1101(work) gid=1101(work) groups=1101(work)
+[Modelarts Service Log]pwd: /home/work
+[Modelarts Service Log]app_url: s3://vbdai-share/Peter/dnn_interpretation/dnn_invariant/loadAssira/code/dnn_invariant/
+[Modelarts Service Log]boot_file: dnn_invariant/data/loadAssira.py
+[Modelarts Service Log]log_url: /tmp/log/loadAssira.log
+[Modelarts Service Log]command: dnn_invariant/data/loadAssira.py --data_url=s3://vbdai-share/Peter/data/ --init_method=tcp://jobb9231b2f-job-loadassira-0.jobb9231b2f:6666 --train_url=s3://vbdai-share/Peter/dnn_interpretation/dnn_invariant/loadAssira/output/V0001/
+[Modelarts Service Log]MODELARTS_IPOIB_DEVICE: 
+[Modelarts Service Log]dependencies_file_dir: /home/work/user-job-dir/dnn_invariant/data
+[Modelarts Service Log][modelarts_create_log] modelarts-pipe found
+[Modelarts Service Log]handle inputs of training job
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+[ModelArts Service Log]INFO: env MA_INPUTS is not found, skip the inputs handler
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+[ModelArts Service Log]2020-04-22 08:22:35,020 - modelarts-downloader.py[line:548] - INFO: Main: modelarts-downloader starting with Namespace(dst='./', recursive=True, skip_creating_dir=False, src='s3://vbdai-share/Peter/dnn_interpretation/dnn_invariant/loadAssira/code/dnn_invariant/', trace=False, verbose=False)
+/home/work/user-job-dir
+[Modelarts Service Log][modelarts_logger] modelarts-pipe found
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+Traceback (most recent call last):
+  File "dnn_invariant/data/loadAssira.py", line 167, in <module>
+    LoadAssira(isNormalized_=True)
+  File "dnn_invariant/data/loadAssira.py", line 33, in __init__
+    X_train, y_train = self.load_assira('s3://vbdai-share/data/assira/train')
+  File "dnn_invariant/data/loadAssira.py", line 128, in load_assira
+    cats_fnames = os.listdir(images_cats_path)
+  File "/home/code/moxing/build/moxing/framework/file/file_io_utils.py", line 202, in mox_listdir
+  File "/home/code/moxing/build/moxing/framework/util/runtime.py", line 253, in wrapper
+  File "/home/code/moxing/build/moxing/framework/file/file_io.py", line 942, in list_directory
+  File "/home/code/moxing/build/moxing/framework/file/file_io.py", line 960, in _list_directory_obs
+moxing.framework.file.file_io.MoxFileNotExistsException: Could not find directory. bucket_name=vbdai-share, object_key=data/assira/train/cats/
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+[ModelArts Service Log]2020-04-22 08:22:38,134 - modelarts-downloader.py[line:548] - INFO: Main: modelarts-downloader starting with Namespace(dst='s3://vbdai-share/Peter/dnn_interpretation/dnn_invariant/loadAssira/log/dls-log-loadAssira-V0001', recursive=False, skip_creating_dir=False, src='/tmp/log/loadAssira.log', trace=False, verbose=False)
+[Modelarts Service Log]Training completed.
+[ModelArts Service Log]modelarts-pipe: will create log file /tmp/log/loadAssira.log
+[ModelArts Service Log]modelarts-pipe: will create log file /tmp/log/loadAssira.log
+[ModelArts Service Log]modelarts-pipe: will write log file /tmp/log/loadAssira.log
+[ModelArts Service Log]modelarts-pipe: param for max log length: 1073741824
+[ModelArts Service Log]modelarts-pipe: param for whether exit on overflow: 0
+[ModelArts Service Log]modelarts-pipe: total length: 993
+

@@ -1,0 +1,53 @@
+ * Restarting DNS forwarder and DHCP server dnsmasq
+   ...done.
+[Modelarts Service Log]user: uid=1101(work) gid=1101(work) groups=1101(work)
+[Modelarts Service Log]pwd: /home/work
+[Modelarts Service Log]app_url: s3://vbdai-share/Peter/dnn_interpretation/code/dnn_invariant/
+[Modelarts Service Log]boot_file: dnn_invariant/data/loadAssira.py
+[Modelarts Service Log]log_url: /tmp/log/dnn_interpretation.log
+[Modelarts Service Log]command: dnn_invariant/data/loadAssira.py --data_url=s3://vbdai-share/Peter/data/ --init_method=tcp://job7e62c392-job-dnn-interpretation-0.job7e62c392:6666 --train_url=s3://vbdai-share/Peter/dnn_interpretation/output/V0002/
+[Modelarts Service Log]MODELARTS_IPOIB_DEVICE: 
+[Modelarts Service Log]dependencies_file_dir: /home/work/user-job-dir/dnn_invariant/data
+[Modelarts Service Log][modelarts_create_log] modelarts-pipe found
+[Modelarts Service Log]handle inputs of training job
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+[ModelArts Service Log]INFO: env MA_INPUTS is not found, skip the inputs handler
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+[ModelArts Service Log]2020-04-22 09:15:08,751 - modelarts-downloader.py[line:548] - INFO: Main: modelarts-downloader starting with Namespace(dst='./', recursive=True, skip_creating_dir=False, src='s3://vbdai-share/Peter/dnn_interpretation/code/dnn_invariant/', trace=False, verbose=False)
+/home/work/user-job-dir
+[Modelarts Service Log][modelarts_logger] modelarts-pipe found
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+INFO:root:Listing OBS: 1000
+INFO:root:Listing OBS: 2000
+INFO:root:Listing OBS: 1000
+INFO:root:Listing OBS: 2000
+/home/work/anaconda3/lib/python3.6/site-packages/skimage/transform/_warps.py:84: UserWarning: The default mode, 'constant', will be changed to 'reflect' in skimage 0.15.
+  warn("The default mode, 'constant', will be changed to 'reflect' in "
+[ModelArts Service Log]modelarts-pipe: will create log file /tmp/log/dnn_interpretation.log
+[ModelArts Service Log]modelarts-pipe: will create log file /tmp/log/dnn_interpretation.log
+[ModelArts Service Log]modelarts-pipe: will write log file /tmp/log/dnn_interpretation.log
+[ModelArts Service Log]modelarts-pipe: param for max log length: 1073741824
+[ModelArts Service Log]modelarts-pipe: param for whether exit on overflow: 0
+(5000, 3, 224, 224)
+(5000,)
+(1000, 3, 224, 224)
+(1000,)
+tensor(0.4541)
+tensor(0.2578)
+normlaized_train mean:  tensor(0.0224)
+Traceback (most recent call last):
+  File "dnn_invariant/data/loadAssira.py", line 167, in <module>
+    LoadAssira(isNormalized_=True)
+  File "dnn_invariant/data/loadAssira.py", line 68, in __init__
+    with open(save_path_train, 'wb') as fid:
+  File "/home/code/moxing/build/moxing/framework/file/file_io_utils.py", line 277, in mox_open
+FileNotFoundError: [Errno 2] No such file or directory: './data/assira_all_Train.ntvt'
+[ModelArts Service Log]modelarts-pipe: total length: 1014
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+[ModelArts Service Log]2020-04-22 09:24:32,867 - modelarts-downloader.py[line:548] - INFO: Main: modelarts-downloader starting with Namespace(dst='s3://vbdai-share/Peter/dnn_interpretation/log/dls-log-dnn_interpretation-V0002', recursive=False, skip_creating_dir=False, src='/tmp/log/dnn_interpretation.log', trace=False, verbose=False)
+[Modelarts Service Log]Training completed.
+

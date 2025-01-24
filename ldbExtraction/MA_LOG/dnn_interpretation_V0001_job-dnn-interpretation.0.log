@@ -1,0 +1,75 @@
+[ModelArts Service Log]modelarts-pipe: will create log file /tmp/log/dnn_interpretation.log
+[ModelArts Service Log]modelarts-pipe: will create log file /tmp/log/dnn_interpretation.log
+[ModelArts Service Log]modelarts-pipe: will write log file /tmp/log/dnn_interpretation.log
+[ModelArts Service Log]modelarts-pipe: param for max log length: 1073741824
+[ModelArts Service Log]modelarts-pipe: param for whether exit on overflow: 0
+ * Restarting DNS forwarder and DHCP server dnsmasq
+   ...done.
+[Modelarts Service Log]user: uid=1101(work) gid=1101(work) groups=1101(work)
+[Modelarts Service Log]pwd: /home/work
+[Modelarts Service Log]app_url: s3://vbdai-share/Peter/dnn_interpretation/code/dnn_invariant/
+[Modelarts Service Log]boot_file: dnn_invariant/data/loadAssira.py
+[Modelarts Service Log]log_url: /tmp/log/dnn_interpretation.log
+[Modelarts Service Log]command: dnn_invariant/data/loadAssira.py --data_url=s3://vbdai-share/Peter/data/ --init_method=tcp://job54f77d36-job-dnn-interpretation-0.job54f77d36:6666 --train_url=s3://vbdai-share/Peter/dnn_interpretation/output/V0001/
+[Modelarts Service Log]MODELARTS_IPOIB_DEVICE: 
+[Modelarts Service Log]dependencies_file_dir: /home/work/user-job-dir/dnn_invariant/data
+[Modelarts Service Log][modelarts_create_log] modelarts-pipe found
+[Modelarts Service Log]handle inputs of training job
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+[ModelArts Service Log]INFO: env MA_INPUTS is not found, skip the inputs handler
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+[ModelArts Service Log]2020-04-22 08:33:21,924 - modelarts-downloader.py[line:548] - INFO: Main: modelarts-downloader starting with Namespace(dst='./', recursive=True, skip_creating_dir=False, src='s3://vbdai-share/Peter/dnn_interpretation/code/dnn_invariant/', trace=False, verbose=False)
+/home/work/user-job-dir
+[Modelarts Service Log][modelarts_logger] modelarts-pipe found
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+INFO:root:Listing OBS: 1000
+INFO:root:Listing OBS: 2000
+INFO:root:Listing OBS: 1000
+INFO:root:Listing OBS: 2000
+/home/work/anaconda3/lib/python3.6/site-packages/skimage/transform/_warps.py:84: UserWarning: The default mode, 'constant', will be changed to 'reflect' in skimage 0.15.
+  warn("The default mode, 'constant', will be changed to 'reflect' in "
+(5000, 3, 224, 224)
+(5000,)
+WARNING:root:Retry=9, Wait=0.1, Timestamp=1587515738.7869594
+WARNING:root:Retry=8, Wait=0.2, Timestamp=1587515739.172495
+WARNING:root:Retry=7, Wait=0.4, Timestamp=1587515739.4067035
+WARNING:root:Retry=6, Wait=0.8, Timestamp=1587515739.8279274
+WARNING:root:Retry=5, Wait=1.6, Timestamp=1587515740.6766315
+WARNING:root:Retry=4, Wait=3.2, Timestamp=1587515742.3049994
+WARNING:root:Retry=3, Wait=6.4, Timestamp=1587515745.5322516
+WARNING:root:Retry=2, Wait=12.8, Timestamp=1587515751.9596925
+WARNING:root:Retry=1, Wait=25.6, Timestamp=1587515764.8052993
+ERROR:root:Failed to call:
+	func=<bound method ObsClient.listObjects of <obs.client.ObsClient object at 0x7f875287ea90>>
+	args=('vbdad-share',)
+	kwargs={prefix:Peter/data/assira/te, delimiter:/, marker:None, max_keys:None, }
+ERROR:root:
+	stat:404
+	errorCode:NoSuchBucket
+	errorMessage:The specified bucket does not exist
+	reason:Not Found
+	request-id:000001719F50303F44CA54B6E8C2CA16
+	retry:0
+Traceback (most recent call last):
+  File "dnn_invariant/data/loadAssira.py", line 167, in <module>
+    LoadAssira(isNormalized_=True)
+  File "dnn_invariant/data/loadAssira.py", line 34, in __init__
+    X_test, y_test = self.load_assira('s3://vbdad-share/Peter/data/assira/test')
+  File "dnn_invariant/data/loadAssira.py", line 128, in load_assira
+    cats_fnames = os.listdir(images_cats_path)
+  File "/home/code/moxing/build/moxing/framework/file/file_io_utils.py", line 202, in mox_listdir
+  File "/home/code/moxing/build/moxing/framework/util/runtime.py", line 253, in wrapper
+  File "/home/code/moxing/build/moxing/framework/file/file_io.py", line 942, in list_directory
+  File "/home/code/moxing/build/moxing/framework/file/file_io.py", line 955, in _list_directory_obs
+  File "/home/code/moxing/build/moxing/framework/file/file_io.py", line 976, in _list_directory_obs_top
+  File "/home/code/moxing/build/moxing/framework/file/file_io.py", line 663, in _retryable_call
+moxing.framework.file.file_io.MoxFileRespException: Error occurs when accessing to OBS.
+[ModelArts Service Log]modelarts-pipe: total length: 2466
+INFO:root:Using MoXing-v1.15.1-5d91b682
+INFO:root:Using OBS-Python-SDK-3.1.2
+[ModelArts Service Log]2020-04-22 08:36:31,014 - modelarts-downloader.py[line:548] - INFO: Main: modelarts-downloader starting with Namespace(dst='s3://vbdai-share/Peter/dnn_interpretation/log/dls-log-dnn_interpretation-V0001', recursive=False, skip_creating_dir=False, src='/tmp/log/dnn_interpretation.log', trace=False, verbose=False)
+[Modelarts Service Log]Training completed.
+
